@@ -9,19 +9,25 @@ int main() {
     TallyCounter tallyCounter;
     CommandManager commandManager;
 
-    commandManager.addCommand(Command("INC", [&tallyCounter]() {
-        tallyCounter.increment();
-        return "OK";
-    }));
+    commandManager.addCommand(
+        Command("INC", [&tallyCounter]() {
+            tallyCounter.increment();
+            return "OK";
+        })
+    );
 
-    commandManager.addCommand(Command("RST", [&tallyCounter]() {
-        tallyCounter.reset();
-        return "OK";
-    }));
+    commandManager.addCommand(
+        Command("RST", [&tallyCounter]() {
+            tallyCounter.reset();
+            return "OK";
+        })
+    );
 
-    commandManager.addCommand(Command("VAL", [&tallyCounter]() {
-        return std::to_string(tallyCounter.value());
-    }));
+    commandManager.addCommand(
+        Command("VAL", [&tallyCounter]() {
+            return std::to_string(tallyCounter.value());
+        })
+    );
     
     printf("--- Tally Counter App ---\n");
     
