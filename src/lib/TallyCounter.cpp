@@ -1,7 +1,7 @@
 #include "TallyCounter.h"
 
 TallyCounter::TallyCounter() {
-    counter = 0;
+    reset();
 }
 
 void TallyCounter::increment() {
